@@ -8,4 +8,27 @@
 .search-result{display:grid;grid-template-columns:170px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}.search-result dt{font-weight:800;color:var(--navy)}.search-result dd{margin:0;color:#3d4c5e}.knowledge-domain{margin-bottom:20px}.map-row{display:grid;grid-template-columns:220px 1fr auto;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}.map-row:last-child{border:0}.map-lessons{white-space:nowrap}.mistake-row{display:grid;grid-template-columns:80px 1fr 130px 110px;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,30px);opacity:0;background:var(--navy);color:#fff;padding:10px 16px;border-radius:9px;z-index:100;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}.back-top{position:fixed;right:18px;bottom:18px;width:42px;height:42px;border:0;border-radius:50%;background:var(--navy);color:#fff;box-shadow:var(--shadow);cursor:pointer;opacity:0;pointer-events:none}.back-top.show{opacity:1;pointer-events:auto}
 @media(max-width:1000px){.grid-4{grid-template-columns:repeat(2,1fr)}.reading-layout{grid-template-columns:1fr}.lesson-toc{position:relative;top:auto;max-height:none;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.lesson-toc a{display:inline-block;border:0;padding:5px 8px}.exam-layout{grid-template-columns:1fr}.exam-side{position:relative;order:-1}.session-row{grid-template-columns:65px 90px 1fr 90px}.session-duration{display:none}}
 @media(max-width:760px){.sidebar{transform:translateX(-102%);transition:.2s;width:min(86vw,300px);box-shadow:var(--shadow)}.sidebar.open{transform:translateX(0)}.page-area{margin-left:0}.mobile-header{height:62px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:34}.mobile-header .brand{margin:0}.mobile-header .brand-mark{width:34px;height:34px}.icon-button{background:none;border:0;font-size:22px;color:var(--navy)}.header-progress{font-size:12px;color:var(--muted)}.page-area main{padding:22px 14px 60px}.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}.today-card{grid-template-columns:1fr}.quick-links{grid-template-columns:repeat(2,1fr)}.session-row{grid-template-columns:58px 1fr 60px;padding:13px 12px}.session-date{display:none}.session-domain{text-align:right}.lesson-hero{border-radius:14px;padding:24px 18px}.lesson-hero h1{font-size:31px}.central-question{font-size:21px}.lesson-content section{padding:22px 17px;border-radius:12px}.lesson-content h2{font-size:23px}.lesson-content p{font-size:16px;line-height:1.72}.lesson-table{display:block;overflow-x:auto;white-space:normal}.diagram-flow{align-items:stretch}.diagram-node{min-width:118px}.sticky-actions{bottom:8px}.sticky-actions .remaining{display:none}.lesson-nav{flex-direction:column}.exam-side .card{padding:14px}.question-nav{grid-template-columns:repeat(7,1fr)}.map-row,.search-result,.mistake-row{grid-template-columns:1fr;gap:4px}.page-area footer{padding:20px 14px}.filter-bar input{min-width:100%}}
+/* Keep intrinsic table and code widths inside the lesson's reading column. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+.page-area,.page-area main,.lesson-wrap,.reading-layout,.lesson-content,.lesson-toc{min-width:0}
+.lesson-wrap,.reading-layout,.lesson-content{width:100%}
+.lesson-content,.lesson-toc,.lesson-hero{overflow-wrap:anywhere}
+.lesson-content section,.code-block,.diagram,.question-card{min-width:0;max-width:100%}
+.code-block pre{max-width:100%;overflow-wrap:normal;word-break:normal}
+.diagram-flow{max-width:100%}
+.option{grid-template-columns:20px minmax(0,1fr)}
+@media(max-width:1000px){
+  .reading-layout{grid-template-columns:minmax(0,1fr);gap:20px}
+  .lesson-toc a{display:block;border-left:2px solid var(--line);padding:8px 10px}
+  .lesson-toc strong{display:block;margin-bottom:8px}
+}
+@media(max-width:760px){
+  .read-progress{top:62px}
+  .lesson-content section{scroll-margin-top:82px}
+  .lesson-table{max-width:100%;overscroll-behavior-x:contain}
+  .lesson-toc{padding:16px}
+  .lesson-toc a{line-height:1.5}
+  .sticky-actions{gap:8px;flex-wrap:wrap;bottom:max(8px,env(safe-area-inset-bottom))}
+  .sticky-actions .button-row{gap:8px}
+}
 @media print{.sidebar,.mobile-header,.sticky-actions,.back-top,.button,.lesson-toc{display:none!important}.page-area{margin:0}.page-area main{padding:0}.lesson-content section{border:0;break-inside:avoid}.lesson-hero{border:0}.reading-layout{display:block}}
